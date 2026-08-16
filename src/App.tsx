@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react'
+import { type FormEvent, useEffect, useMemo, useState } from 'react'
 import './App.css'
 
 type View = 'home' | 'jobs' | 'immigration' | 'hub' | 'community'
