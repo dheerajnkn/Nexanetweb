@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify auto-detects Next.js App Router and installs the Next.js
+# Runtime (@netlify/plugin-nextjs) at build time — no manual plugin
+# entry required. See: https://docs.netlify.com/frameworks/next-js/overview/

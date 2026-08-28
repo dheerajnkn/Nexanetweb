@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# NexaNet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing and recruiting site for NexaNet — a technology staffing and workforce
+solutions partner. Built with Next.js (App Router), TypeScript, Tailwind CSS,
+Framer Motion, and React Three Fiber for the two 3D visualizations.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Next.js 15** (App Router, Route Handlers, Metadata API)
+- **TypeScript**, **Tailwind CSS**
+- **Framer Motion** for interaction/motion, **GSAP + ScrollTrigger** for the
+  scroll-driven recruiting-methodology timeline
+- **React Three Fiber / drei / three** for the hero talent-network graphic and
+  the expertise constellation — both degrade to a static/DOM fallback without
+  WebGL, on `prefers-reduced-motion`, and render fewer nodes on small viewports
+- **Zod** for form validation
+- **@netlify/blobs** for form-submission storage (see below)
 
-## React Compiler
+## Content architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Page copy and structured content live under `content/` as typed data
+(`services.ts`, `expertise.ts`, `industries.ts`, `jobs.ts`, `methodology.ts`,
+`site.ts`) rather than being hardcoded into JSX — swap these for a real CMS
+or API later without touching page/component code.
 
-## Expanding the ESLint configuration
+## Forms
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`/contact` (Find Talent) and `/talent` (join the network / submit a resume)
+post to `app/api/contact` and `app/api/talent`, which validate with Zod and
+persist to Netlify Blobs via `lib/submissions.ts`. Netlify Blobs auto-provisions
+per site when deployed on Netlify — **no submissions are emailed or sent to a
+CRM out of the box.** Wire a real email/CRM/ATS integration in
+`lib/submissions.ts` before relying on these forms for live leads.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Copy `.env.example` to `.env.local` to configure optional analytics
+(`NEXT_PUBLIC_ANALYTICS_DOMAIN` — unset by default, so no analytics script
+loads until configured).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Deployment
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Deploys on Netlify via `netlify.toml` (`npm run build`; Netlify auto-detects
+the Next.js App Router and installs the Next.js Runtime).
