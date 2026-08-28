@@ -17,7 +17,7 @@ export default async function JobsPage({ searchParams }: { searchParams: Promise
   return (
     <>
       <PageHero eyebrow="Jobs" title="Open roles" description="A sample of current engagements. New roles are added as clients open them." />
-      <Section border={false}>
+      <Section>
         <JobBoard jobs={jobs} initialQuery={q ?? ''} initialArea={area ?? ''} />
       </Section>
     </>

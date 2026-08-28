@@ -14,7 +14,7 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero eyebrow="Industries" title="Industries we support" description="Domain-aware staffing for regulated and high-stakes environments." />
-      <Section border={false}>
+      <Section>
         <div className="grid grid-cols-1 divide-y divide-line border border-line md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-3">
           {industries.map((industry, i) => (
             <div key={industry.slug} className="p-8">
@@ -24,7 +24,7 @@ export default function IndustriesPage() {
               <ul className="mt-6 flex flex-col gap-2">
                 {industry.focusAreas.map(area => (
                   <li key={area} className="flex items-start gap-2 text-xs text-ink">
-                    <span aria-hidden className="mt-1.5 h-1 w-1 shrink-0 bg-signal" />
+                    <span aria-hidden className="mt-1.5 h-1 w-1 shrink-0 bg-accent-blue" />
                     {area}
                   </li>
                 ))}

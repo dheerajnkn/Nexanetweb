@@ -35,14 +35,14 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <PageHero eyebrow={expertise?.name ?? 'Open role'} title={job.title} description={job.summary} />
-      <Section border={false}>
+      <Section>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_320px]">
           <div>
             <h2 className="text-sm font-medium uppercase tracking-wide text-ink-faint">Responsibilities</h2>
             <ul className="mt-4 flex flex-col gap-3">
               {job.responsibilities.map(item => (
                 <li key={item} className="flex items-start gap-2 text-sm text-ink">
-                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-signal" />
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-accent-blue" />
                   {item}
                 </li>
               ))}
@@ -51,7 +51,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
             <ul className="mt-4 flex flex-col gap-3">
               {job.qualifications.map(item => (
                 <li key={item} className="flex items-start gap-2 text-sm text-ink">
-                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-signal" />
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-accent-blue" />
                   {item}
                 </li>
               ))}

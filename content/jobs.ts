@@ -16,7 +16,7 @@ export const jobs: Job[] = [
   {
     slug: 'senior-iam-engineer-remote',
     title: 'Senior IAM Engineer',
-    expertiseSlug: 'identity-access-management',
+    expertiseSlug: 'cybersecurity-iam',
     location: 'Remote — United States',
     remote: true,
     employmentType: 'Contract-to-hire',
@@ -29,7 +29,7 @@ export const jobs: Job[] = [
   {
     slug: 'soc-analyst-tier2-hybrid',
     title: 'SOC Analyst, Tier 2',
-    expertiseSlug: 'cybersecurity',
+    expertiseSlug: 'cybersecurity-iam',
     location: 'Hybrid — New York, NY',
     remote: false,
     employmentType: 'Contract',
@@ -42,7 +42,7 @@ export const jobs: Job[] = [
   {
     slug: 'platform-engineer-kubernetes-remote',
     title: 'Platform Engineer, Kubernetes',
-    expertiseSlug: 'cloud',
+    expertiseSlug: 'cloud-infrastructure',
     location: 'Remote — United States',
     remote: true,
     employmentType: 'Direct placement',
@@ -68,7 +68,7 @@ export const jobs: Job[] = [
   {
     slug: 'ml-engineer-applied-ai-remote',
     title: 'ML Engineer, Applied AI',
-    expertiseSlug: 'ai-data',
+    expertiseSlug: 'data-analytics-ai',
     location: 'Remote — United States',
     remote: true,
     employmentType: 'Contract',
@@ -81,7 +81,7 @@ export const jobs: Job[] = [
   {
     slug: 'cloud-security-engineer-remote',
     title: 'Cloud Security Engineer',
-    expertiseSlug: 'cybersecurity',
+    expertiseSlug: 'cybersecurity-iam',
     location: 'Remote — United States',
     remote: true,
     employmentType: 'Direct placement',

@@ -10,7 +10,9 @@ export const metadata: Metadata = buildMetadata({
   path: '/contact',
 })
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ email?: string }> }) {
+  const { email } = await searchParams
+
   return (
     <>
       <PageHero
@@ -18,9 +20,9 @@ export default function ContactPage() {
         title="Find talent"
         description="Tell us about the role, timeline and team you're hiring for — we'll come back with a plan, not a generic pitch."
       />
-      <Section border={false}>
+      <Section>
         <div className="max-w-2xl">
-          <ContactForm />
+          <ContactForm initialEmail={email ?? ''} />
         </div>
       </Section>
     </>

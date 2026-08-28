@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-export function ContactForm() {
+export function ContactForm({ initialEmail = '' }: { initialEmail?: string }) {
   const [status, setStatus] = useState<Status>('idle')
   const [errors, setErrors] = useState<Record<string, string>>({})
 
@@ -70,7 +70,7 @@ export function ContactForm() {
           <input id="name" name="name" type="text" required className={inputClass} />
         </FormField>
         <FormField label="Work email" htmlFor="email" error={errors.email} required>
-          <input id="email" name="email" type="email" required className={inputClass} />
+          <input id="email" name="email" type="email" required defaultValue={initialEmail} className={inputClass} />
         </FormField>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

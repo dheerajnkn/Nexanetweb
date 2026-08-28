@@ -32,7 +32,7 @@ export function JobBoard({ jobs, initialQuery = '', initialArea = '' }: { jobs: 
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title, skill or keyword"
           aria-label="Search open roles"
-          className="w-full flex-1 border border-line px-4 py-3 text-sm text-ink outline-none focus-visible:border-signal"
+          className="w-full flex-1 border border-line px-4 py-3 text-sm text-ink outline-none focus-visible:border-accent-blue"
         />
         <label className="flex items-center gap-2 text-sm text-ink-muted">
           <input type="checkbox" checked={remoteOnly} onChange={e => setRemoteOnly(e.target.checked)} />
@@ -44,7 +44,7 @@ export function JobBoard({ jobs, initialQuery = '', initialArea = '' }: { jobs: 
         <button
           type="button"
           onClick={() => setArea('')}
-          className={`border px-3 py-1.5 text-xs font-medium transition-colors ${area === '' ? 'border-signal bg-signal-soft text-signal' : 'border-line text-ink-muted hover:border-ink'}`}
+          className={`border px-3 py-1.5 text-xs font-medium transition-colors ${area === '' ? 'border-accent-blue bg-accent-soft text-accent-blue' : 'border-line text-ink-muted hover:border-white/40'}`}
         >
           All areas
         </button>
@@ -55,7 +55,7 @@ export function JobBoard({ jobs, initialQuery = '', initialArea = '' }: { jobs: 
             onClick={() => setArea(current => (current === item.slug ? '' : item.slug))}
             aria-pressed={area === item.slug}
             className={`border px-3 py-1.5 text-xs font-medium transition-colors ${
-              area === item.slug ? 'border-signal bg-signal-soft text-signal' : 'border-line text-ink-muted hover:border-ink'
+              area === item.slug ? 'border-accent-blue bg-accent-soft text-accent-blue' : 'border-line text-ink-muted hover:border-white/40'
             }`}
           >
             {item.shortName}
@@ -69,13 +69,13 @@ export function JobBoard({ jobs, initialQuery = '', initialArea = '' }: { jobs: 
         {filtered.map(job => (
           <Link key={job.slug} href={`/jobs/${job.slug}`} className="group flex flex-col gap-2 py-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="text-base font-medium text-ink group-hover:text-signal">{job.title}</h3>
+              <h3 className="text-base font-medium text-ink group-hover:text-accent-blue">{job.title}</h3>
               <p className="mt-1 text-sm text-ink-muted">{getExpertiseBySlug(job.expertiseSlug)?.name} · {job.location}</p>
             </div>
             <div className="flex items-center gap-3 text-xs text-ink-faint">
               <span className="border border-line px-2 py-1">{job.employmentType}</span>
               <span className="border border-line px-2 py-1">{job.level}</span>
-              <span aria-hidden className="text-signal transition-transform group-hover:translate-x-1">→</span>
+              <span aria-hidden className="text-accent-blue transition-transform group-hover:translate-x-1">→</span>
             </div>
           </Link>
         ))}

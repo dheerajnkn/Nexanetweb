@@ -34,7 +34,7 @@ export default async function ExpertiseDetailPage({ params }: { params: Promise<
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <PageHero eyebrow="Expertise" title={area.name} description={area.summary} />
-      <Section border={false}>
+      <Section>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_320px]">
           <div>
             <p className="text-base leading-relaxed text-ink-muted">{area.description}</p>
@@ -42,7 +42,7 @@ export default async function ExpertiseDetailPage({ params }: { params: Promise<
             <ul className="mt-4 flex flex-col gap-3">
               {area.capabilities.map(cap => (
                 <li key={cap} className="flex items-start gap-2 text-sm text-ink">
-                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-signal" />
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 bg-accent-blue" />
                   {cap}
                 </li>
               ))}
@@ -53,7 +53,7 @@ export default async function ExpertiseDetailPage({ params }: { params: Promise<
                 <h2 className="mt-10 text-sm font-medium uppercase tracking-wide text-ink-faint">Open roles</h2>
                 <div className="mt-4 divide-y divide-line border-t border-line">
                   {relatedJobs.map(job => (
-                    <Link key={job.slug} href={`/jobs/${job.slug}`} className="flex items-center justify-between py-4 hover:text-signal">
+                    <Link key={job.slug} href={`/jobs/${job.slug}`} className="flex items-center justify-between py-4 hover:text-accent-blue">
                       <span className="text-sm font-medium">{job.title}</span>
                       <span aria-hidden>→</span>
                     </Link>
