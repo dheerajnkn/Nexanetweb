@@ -67,12 +67,12 @@ function NetworkGroup({ animate }: { animate: boolean }) {
   return (
     <group ref={group}>
       {connections.map((pair, i) => (
-        <Line key={i} points={pair} color="#0A3BFF" transparent opacity={0.12} lineWidth={1} />
+        <Line key={i} points={pair} color="#34E1EA" transparent opacity={0.22} lineWidth={1} />
       ))}
       {nodes.map((node, i) => (
         <mesh key={i} position={node.position}>
           <sphereGeometry args={[node.cluster === 'talent' ? 0.05 : 0.045, 12, 12]} />
-          <meshBasicMaterial color={node.cluster === 'talent' ? '#101113' : '#0A3BFF'} />
+          <meshBasicMaterial color={node.cluster === 'talent' ? '#EAF1FB' : '#34E1EA'} />
         </mesh>
       ))}
     </group>
@@ -87,7 +87,7 @@ export function HeroScene() {
     return (
       <div
         aria-hidden
-        className="h-full w-full bg-[radial-gradient(circle_at_30%_30%,rgba(10,59,255,0.08),transparent_60%)]"
+        className="h-full w-full bg-[radial-gradient(circle_at_70%_35%,rgba(52,225,234,0.12),transparent_60%)]"
       />
     )
   }

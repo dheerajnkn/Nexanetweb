@@ -25,6 +25,6 @@
   }
 
   ::selection {
-    @apply bg-signal/20 text-ink;
+    @apply bg-accent-blue/20 text-ink;
   }
 }

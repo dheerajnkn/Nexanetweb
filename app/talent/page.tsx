@@ -18,7 +18,7 @@ export default function TalentPage() {
         title="Join our network"
         description="Tell us about your background and the kind of role you're looking for. We'll reach out when there's a real match."
       />
-      <Section border={false}>
+      <Section>
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <div>
             <h2 className="text-lg font-medium text-ink">Join the network</h2>

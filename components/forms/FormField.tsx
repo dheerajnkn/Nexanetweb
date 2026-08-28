@@ -17,7 +17,7 @@ export function FormField({
     <div className="flex flex-col gap-2">
       <label htmlFor={htmlFor} className="text-sm font-medium text-ink">
         {label}
-        {required && <span aria-hidden className="text-signal"> *</span>}
+        {required && <span aria-hidden className="text-accent-blue"> *</span>}
       </label>
       {children}
       {error && (
@@ -30,4 +30,4 @@ export function FormField({
 }
 
 export const inputClass =
-  'w-full border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus-visible:border-signal'
+  'w-full border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus-visible:border-accent-blue'
