@@ -5,21 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: '#FAFAF8',
+        canvas: '#EEF5FA',
         surface: '#FFFFFF',
         ink: {
-          DEFAULT: '#101113',
-          muted: '#54565C',
-          faint: '#8B8D93',
+          DEFAULT: '#0A1D35',
+          muted: '#5F7692',
+          faint: '#98ACC0',
         },
         line: {
-          DEFAULT: '#E4E4E1',
-          strong: '#D2D2CE',
+          DEFAULT: '#D6E3ED',
+          strong: '#B8CCDF',
         },
         signal: {
-          DEFAULT: '#0A3BFF',
-          ink: '#062A9E',
-          soft: '#EEF2FF',
+          DEFAULT: '#20BCE6',
+          ink: '#1485C8',
+          soft: '#E2F8FD',
         },
       },
       fontFamily: {
@@ -30,9 +30,9 @@ const config: Config = {
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
       },
       fontSize: {
-        'display-lg': ['clamp(2.75rem, 5vw, 5rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
-        'display-md': ['clamp(2.25rem, 3.6vw, 3.5rem)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
-        'display-sm': ['clamp(1.75rem, 2.4vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+        'display-lg': ['clamp(2.9rem, 5.4vw, 5.5rem)', { lineHeight: '0.98', letterSpacing: '-0.045em' }],
+        'display-md': ['clamp(2.25rem, 3.6vw, 3.5rem)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
+        'display-sm': ['clamp(1.8rem, 2.5vw, 2.35rem)', { lineHeight: '1.12', letterSpacing: '-0.025em' }],
       },
       maxWidth: {
         content: '1200px',
