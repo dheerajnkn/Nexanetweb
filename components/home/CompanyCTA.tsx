@@ -12,7 +12,11 @@ export function CompanyCTA() {
             Tell us about the role and timeline — we&apos;ll come back with a plan, not a generic pitch.
           </p>
         </div>
-        <LinkButton href="/contact" variant="primary" className="shrink-0 border-white bg-white text-ink hover:bg-signal hover:border-signal hover:text-white">
+        <LinkButton
+          href="/contact"
+          variant="primary"
+          className="shrink-0 border-white bg-white !text-ink hover:border-signal hover:bg-signal hover:!text-white"
+        >
           Find Talent
         </LinkButton>
       </Container>
