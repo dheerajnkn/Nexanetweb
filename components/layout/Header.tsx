@@ -12,9 +12,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#24435F] bg-[#061A31]/95 text-white backdrop-blur">
       <div className="mx-auto flex h-20 max-w-content items-center justify-between px-6 md:px-10">
-        <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold tracking-tight text-white">
-          <span aria-hidden className="inline-block h-8 w-8 rounded-sm bg-gradient-to-br from-signal via-[#2584FF] to-[#172D61]" />
-          NexaNet <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/50">LLC</span>
+        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight text-white">
+          <span aria-hidden className="grid h-10 w-10 place-items-center rounded-[11px_4px_11px_4px] bg-gradient-to-br from-[#58DCEF] via-[#2584FF] to-[#625AF2] shadow-[0_10px_28px_rgba(37,132,255,0.35)] ring-1 ring-white/30">
+            <span className="text-2xl font-bold tracking-[-0.14em] text-white">N</span>
+          </span>
+          <span className="grid gap-0.5">
+            <span className="leading-none">NexaNet <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">LLC</span></span>
+            <span className="font-mono text-[7px] font-medium tracking-[0.12em] text-[#9CC6E8]">IT CONSULTING + WORKFORCE SOLUTIONS</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-2 lg:flex">
