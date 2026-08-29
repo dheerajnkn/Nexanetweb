@@ -23,7 +23,7 @@ export function Hero() {
             <LinkButton href="/contact" variant="primary" className="border-signal bg-signal !text-[#061A31] hover:border-white hover:bg-white">
               Discuss Your Needs <span aria-hidden>↗</span>
             </LinkButton>
-            <LinkButton href="/services" variant="secondary" className="border-[#4A7097] !text-white hover:border-signal">
+            <LinkButton href="/technology-staffing" variant="secondary" className="border-[#4A7097] !text-white hover:border-signal">
               Explore Services <span aria-hidden>↓</span>
             </LinkButton>
           </div>
