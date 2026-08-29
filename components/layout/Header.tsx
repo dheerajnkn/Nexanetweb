@@ -11,14 +11,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#24435F] bg-[#061A31]/95 text-white backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-content items-center justify-between px-6 md:px-10">
-        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight text-white">
-          <span aria-hidden className="grid h-10 w-10 place-items-center rounded-[11px_4px_11px_4px] bg-gradient-to-br from-[#58DCEF] via-[#2584FF] to-[#625AF2] shadow-[0_10px_28px_rgba(37,132,255,0.35)] ring-1 ring-white/30">
-            <span className="text-2xl font-bold tracking-[-0.14em] text-white">N</span>
+      <div className="mx-auto flex h-[68px] max-w-content items-center justify-between px-6 md:px-10">
+        <Link href="/" className="flex items-center gap-2.5 text-white">
+          <span aria-hidden className="grid h-8 w-8 place-items-center rounded-[8px_3px_8px_3px] bg-gradient-to-br from-[#5FE1F3] via-[#2688F7] to-[#6058EB] shadow-[0_8px_20px_rgba(37,132,255,0.3)] ring-1 ring-white/25">
+            <span className="text-xl font-bold tracking-[-0.14em] text-white">N</span>
           </span>
-          <span className="grid gap-0.5">
-            <span className="leading-none">NexaNet <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">LLC</span></span>
-            <span className="font-mono text-[7px] font-medium tracking-[0.12em] text-[#9CC6E8]">IT CONSULTING + WORKFORCE SOLUTIONS</span>
+          <span className="flex items-center gap-2">
+            <span className="text-[19px] font-semibold leading-none tracking-[-0.055em]">NexaNet</span>
+            <span className="border-l border-white/20 pl-2 font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-[#A8CBEB]">LLC</span>
           </span>
         </Link>
 
