@@ -14,18 +14,21 @@ type Node = { position: [number, number, number]; cluster: Cluster }
 function buildNodes(countPerCluster: number): Node[] {
   const rand = mulberry32(42)
   const nodes: Node[] = []
+
   for (let i = 0; i < countPerCluster; i++) {
     nodes.push({
       cluster: 'talent',
-      position: [-2.4 - rand() * 1.6, (rand() - 0.5) * 3.2, (rand() - 0.5) * 1.6],
+      position: [-0.8 - rand() * 1.1, (rand() - 0.5) * 2.6, (rand() - 0.5) * 1.4],
     })
   }
+
   for (let i = 0; i < countPerCluster; i++) {
     nodes.push({
       cluster: 'role',
-      position: [2.4 + rand() * 1.6, (rand() - 0.5) * 3.2, (rand() - 0.5) * 1.6],
+      position: [0.8 + rand() * 1.1, (rand() - 0.5) * 2.6, (rand() - 0.5) * 1.4],
     })
   }
+
   return nodes
 }
 
@@ -34,13 +37,13 @@ function buildConnections(nodes: Node[], perTalentNode: number) {
   const roles = nodes.filter(n => n.cluster === 'role')
   const pairs: [THREE.Vector3, THREE.Vector3][] = []
 
-  talent.forEach((t, i) => {
+  talent.forEach(t => {
     const sorted = [...roles].sort((a, b) => distance(t, a) - distance(t, b))
     sorted.slice(0, perTalentNode).forEach(r => {
       pairs.push([new THREE.Vector3(...t.position), new THREE.Vector3(...r.position)])
     })
-    void i
   })
+
   return pairs
 }
 
@@ -53,21 +56,21 @@ function distance(a: Node, b: Node) {
 function NetworkGroup({ animate }: { animate: boolean }) {
   const group = useRef<THREE.Group>(null)
   const compact = useIsCompactViewport()
-  const nodes = useMemo(() => buildNodes(compact ? 8 : 14), [compact])
-  const connections = useMemo(() => buildConnections(nodes, compact ? 1 : 2), [nodes, compact])
+  const nodes = useMemo(() => buildNodes(compact ? 5 : 10), [compact])
+  const connections = useMemo(() => buildConnections(nodes, 1), [nodes])
 
   useFrame((state, delta) => {
     if (!group.current || !animate) return
-    const targetX = state.pointer.y * 0.15
-    const targetY = state.pointer.x * 0.25
+    const targetX = state.pointer.y * 0.12
+    const targetY = state.pointer.x * 0.18
     group.current.rotation.x += (targetX - group.current.rotation.x) * Math.min(delta * 2, 1)
-    group.current.rotation.y += (targetY + 0.15 - group.current.rotation.y) * Math.min(delta * 2, 1)
+    group.current.rotation.y += (targetY + 0.1 - group.current.rotation.y) * Math.min(delta * 2, 1)
   })
 
   return (
-    <group ref={group}>
+    <group ref={group} position={[2, 0, 0]} scale={0.9}>
       {connections.map((pair, i) => (
-        <Line key={i} points={pair} color="#0A3BFF" transparent opacity={0.12} lineWidth={1} />
+        <Line key={i} points={pair} color="#0A3BFF" transparent opacity={0.1} lineWidth={1} />
       ))}
       {nodes.map((node, i) => (
         <mesh key={i} position={node.position}>
@@ -87,7 +90,7 @@ export function HeroScene() {
     return (
       <div
         aria-hidden
-        className="h-full w-full bg-[radial-gradient(circle_at_30%_30%,rgba(10,59,255,0.08),transparent_60%)]"
+        className="h-full w-full bg-[radial-gradient(circle_at_75%_30%,rgba(10,59,255,0.08),transparent_45%)]"
       />
     )
   }
