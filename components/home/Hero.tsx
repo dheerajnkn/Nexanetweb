@@ -12,7 +12,7 @@ export function Hero() {
       </div>
       <Container className="relative z-10 py-28 md:py-40">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-signal/35 bg-signal/10 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-[#AEEFFF]">\n            <span className="h-1.5 w-1.5 rounded-full bg-signal shadow-[0_0_12px_#20BCE6]" />\n            NexaNet delivery network\n          </div>\n          <Eyebrow className="mt-6">IT consulting · Workforce solutions</Eyebrow>
+          <div className="inline-flex items-center gap-2 rounded-full border border-signal/35 bg-signal/10 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-[#AEEFFF]">\n            <span className="h-1.5 w-1.5 rounded-full bg-signal shadow-[0_0_12px_#20BCE6]" />\n            NexaNet delivery network\n          </div>\n          <div className="mt-6"><Eyebrow>IT consulting · Workforce solutions</Eyebrow></div>
           <h1 className="mt-6 text-display-lg font-semibold text-white">
             Technology talent.<br />Project outcomes.<br /><span className="text-[#CDEBFF]">Built to scale.</span>
           </h1>
