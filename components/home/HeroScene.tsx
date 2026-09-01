@@ -55,6 +55,7 @@ function distance(a: Node, b: Node) {
 
 function NetworkGroup({ animate }: { animate: boolean }) {
   const group = useRef<THREE.Group>(null)
+  const core = useRef<THREE.Group>(null)
   const compact = useIsCompactViewport()
   const nodes = useMemo(() => buildNodes(compact ? 5 : 10), [compact])
   const connections = useMemo(() => buildConnections(nodes, 1), [nodes])
@@ -65,10 +66,30 @@ function NetworkGroup({ animate }: { animate: boolean }) {
     const targetY = state.pointer.x * 0.18
     group.current.rotation.x += (targetX - group.current.rotation.x) * Math.min(delta * 2, 1)
     group.current.rotation.y += (targetY + 0.1 - group.current.rotation.y) * Math.min(delta * 2, 1)
+
+    if (core.current) {
+      core.current.rotation.x += delta * 0.12
+      core.current.rotation.y += delta * 0.18
+    }
   })
 
   return (
     <group ref={group} position={[2, 0, 0]} scale={0.9}>
+      <group ref={core}>
+        <mesh rotation={[0.25, 0.45, 0]}>
+          <octahedronGeometry args={[1.15, 1]} />
+          <meshBasicMaterial color="#5FE1F3" wireframe transparent opacity={0.34} />
+        </mesh>
+        <mesh rotation={[-0.4, 0.2, 0.3]}>
+          <icosahedronGeometry args={[0.72, 1]} />
+          <meshBasicMaterial color="#6B7CFF" wireframe transparent opacity={0.74} />
+        </mesh>
+        <mesh>
+          <sphereGeometry args={[0.22, 20, 20]} />
+          <meshBasicMaterial color="#D5F8FF" transparent opacity={0.92} />
+        </mesh>
+      </group>
+
       {connections.map((pair, i) => (
         <Line key={i} points={pair} color="#6BD9FF" transparent opacity={0.28} lineWidth={1} />
       ))}
