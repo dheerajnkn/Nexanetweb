@@ -81,7 +81,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div id="mobile-nav" className="border-t border-[#24435F] bg-[#09223D] lg:hidden">
+        <div id="mobile-nav" className="mx-auto max-w-content rounded-b-2xl border-x border-b border-white/10 bg-[#09233F] lg:hidden">
           <nav aria-label="Mobile" className="flex flex-col px-6 py-4">
             {primaryNav.map(item => (
               <div key={item.href} className="border-b border-white/10 py-2 last:border-0">
