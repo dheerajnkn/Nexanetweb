@@ -11,17 +11,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#24435F] bg-[#061A31]/95 text-white backdrop-blur">
-      <div className="hidden border-b border-white/10 bg-[#031426] md:block">
-        <div className="mx-auto flex h-9 max-w-content items-center justify-between px-10 font-mono text-[10px] uppercase tracking-[0.11em] text-white/55">
-          <div className="flex items-center gap-5">
-            <span>131 Continental Dr, Suite 305 · Newark, DE</span>
-            <span className="text-white/25">|</span>
-            <span>Mon–Fri · 9:00 AM–6:00 PM ET</span>
-          </div>
-          <a href="tel:+14693056204" className="transition-colors hover:text-signal">Call us · (469) 305-6204</a>
-        </div>
-      </div>
-
       <div className="mx-auto flex h-[72px] max-w-content items-center justify-between px-6 md:px-10">
         <Link href="/" className="flex items-center gap-2.5 text-white">
           <span aria-hidden className="grid h-9 w-9 place-items-center rounded-[9px_3px_9px_3px] bg-gradient-to-br from-[#5FE1F3] via-[#2688F7] to-[#6058EB] shadow-[0_8px_20px_rgba(37,132,255,0.3)] ring-1 ring-white/25">
