@@ -1,47 +1,35 @@
 import { LinkButton } from '@/components/ui/Button'
-import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Container } from '@/components/ui/Container'
-import { HeroSceneLoader } from './HeroSceneLoader'
+
+const paths = [
+  { number: '01', label: 'For businesses', title: <>Build capability<br />without the noise.</>, description: 'Specialized talent, technology consulting, and accountable delivery support.', href: '/solutions', action: 'Explore business solutions', tone: 'from-[#08265A] via-[#1459BD] to-[#0C8BB0]' },
+  { number: '02', label: 'For candidates', title: <>Make your next<br />move count.</>, description: 'Career positioning, interview preparation, and relevant opportunity support.', href: '/talent', action: 'Explore candidate support', tone: 'from-[#087F96] via-[#00B8C9] to-[#1284D3]' },
+]
 
 export function Hero() {
   return (
-    <section className="relative min-h-[720px] overflow-hidden border-b border-[#24435F] bg-[#061A31] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_34%,rgba(32,188,230,0.28),transparent_22%),radial-gradient(circle_at_70%_70%,rgba(35,92,197,0.30),transparent_40%)]" />\n      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(129,202,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(129,202,255,0.12)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(to_bottom,transparent,black_24%,black_76%,transparent)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-80">
-        <HeroSceneLoader />
-      </div>
-      <Container className="relative z-10 py-28 md:py-40">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-signal/35 bg-signal/10 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-[#AEEFFF]">\n            <span className="h-1.5 w-1.5 rounded-full bg-signal shadow-[0_0_12px_#20BCE6]" />\n            NexaNet delivery network\n          </div>\n          <div className="mt-6"><Eyebrow>IT consulting · Workforce solutions</Eyebrow></div>
-          <h1 className="mt-6 text-display-lg font-semibold text-white">
-            Technology talent.<br />Project outcomes.<br /><span className="text-[#CDEBFF]">Built to scale.</span>
-          </h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/70">
-            NexaNet connects specialized expertise, exceptional talent, and focused project support to measurable business outcomes.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <LinkButton href="/contact" variant="primary" className="border-signal bg-signal !text-[#061A31] hover:border-white hover:bg-white">
-              Discuss Your Needs <span aria-hidden>↗</span>
-            </LinkButton>
-            <LinkButton href="/technology-staffing" variant="secondary" className="border-[#4A7097] !text-white hover:border-signal">
-              Explore Services <span aria-hidden>↓</span>
-            </LinkButton>
-          </div>
+    <section className="relative overflow-hidden border-b border-[#D8E7F5] bg-[#F7FBFF] text-[#071A3A]">
+      <div aria-hidden className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(34,105,180,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(34,105,180,0.08)_1px,transparent_1px)] [background-size:74px_74px] [mask-image:linear-gradient(90deg,black_0%,black_42%,transparent_78%)]" />
+      <div aria-hidden className="pointer-events-none absolute -right-[35rem] -top-[24rem] h-[74rem] w-[74rem] rounded-full border border-[#1554DA]/15" />
+      <div aria-hidden className="pointer-events-none absolute -right-[19rem] -top-[8rem] h-[48rem] w-[48rem] rounded-full border border-[#00B8C9]/20" />
+
+      <Container className="relative grid min-h-[760px] gap-10 py-16 lg:grid-cols-[0.95fr_1.1fr] lg:items-center lg:gap-20 lg:py-20">
+        <div className="self-start pt-6 lg:pt-14">
+          <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#087E9D]">NexaNet LLC <span className="mx-2 text-[#5D8AAF]">•</span> Newark, Delaware</div>
+          <p className="mt-12 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#1554DA]">One network. Two ways forward.</p>
+          <h1 className="mt-4 text-[clamp(3.3rem,5.8vw,5.35rem)] font-semibold leading-[0.91] tracking-[-0.075em] text-[#071A3A]">Start where<br />the work <span className="text-[#08AABA]">matters.</span></h1>
+          <p className="mt-8 max-w-md text-[17px] leading-relaxed text-[#61718A]">Choose the path that fits your next move. We connect ambitious technology work with the people who can deliver it.</p>
+          <div className="mt-11 flex items-center gap-3 text-[#0D3F78]"><span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-[#0F8BA4]">THE NEXANET METHOD</span>{['Align.', 'Prepare.', 'Move.'].map((step, index) => <span key={step} className={`grid h-14 w-14 place-items-center rounded-full border border-[#A9CAE7] bg-white/70 text-[11px] font-semibold shadow-[0_8px_20px_rgba(33,89,150,0.08)] ${index === 1 ? '-translate-y-3' : ''}`}>{step}</span>)}</div>
         </div>
-        <span className="sr-only">
-          A network diagram connecting technology talent to enterprise roles, representing NexaNet&apos;s matching process.
-        </span>
-      </Container>
-      <div className="relative z-10 border-t border-white/10 bg-[#041326]/80">
-        <Container className="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
-          {['Quality over volume', 'US-based partnership', 'Scalable & secure'].map((item, index) => (
-            <div key={item} className="flex items-center gap-4 py-6 text-sm font-medium text-white/80 md:px-8 md:first:pl-0">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-signal/70 font-mono text-xs text-signal">0{index + 1}</span>
-              {item}
-            </div>
+
+        <div className="relative grid gap-4">
+          {paths.map(path => (
+            <LinkButton key={path.number} href={path.href} variant="primary" className={`group min-h-[244px] w-full !items-stretch !justify-start !rounded-[18px] !border-0 !bg-gradient-to-br ${path.tone} !p-7 !text-left !text-white shadow-[0_25px_52px_rgba(9,55,120,0.22)] transition-transform hover:-translate-x-2`}>
+              <span className="flex w-full flex-col"><span className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-white/70">{path.number} / {path.label}</span><span className="mt-6 text-[31px] font-semibold leading-[1.02] tracking-[-0.045em]">{path.title}</span><span className="mt-3 max-w-md text-sm leading-relaxed text-white/75">{path.description}</span><span className="mt-auto flex items-center justify-between border-t border-white/25 pt-5 text-[13px] font-semibold">{path.action}<b className="text-xl font-normal">↗</b></span></span>
+            </LinkButton>
           ))}
-        </Container>
-      </div>
+        </div>
+      </Container>
     </section>
   )
 }
