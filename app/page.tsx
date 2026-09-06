@@ -7,6 +7,7 @@ import { FeaturedJobs } from '@/components/home/FeaturedJobs'
 import { Industries } from '@/components/home/Industries'
 import { WhyNexanet } from '@/components/home/WhyNexanet'
 import { CandidateCTA } from '@/components/home/CandidateCTA'
+import { PartnershipCarousel } from '@/components/home/PartnershipCarousel'
 import { CompanyCTA } from '@/components/home/CompanyCTA'
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
       <FeaturedJobs />
       <Industries />
       <WhyNexanet />
+      <PartnershipCarousel />
       <CandidateCTA />
       <CompanyCTA />
     </>
